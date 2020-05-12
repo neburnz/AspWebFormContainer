@@ -12,6 +12,7 @@ ASP .NET WebForms (.NET 4.5) on Docker container demo
 2. ***aspnet_47***. Upgrade Web app to .NET 4.7.2.
 3. ***config_builder***. Integrated Configuration Builders to externalize connection strings.
 4. ***container***. Encapsulating the web app to run on Docker container.
+5. ***nuget_local***. Integrating how to use NuGet Package source locally.
 
 ## Execution:
 
