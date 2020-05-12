@@ -2,6 +2,7 @@ FROM mcr.microsoft.com/dotnet/framework/sdk:4.7.2 AS build
 WORKDIR /app
 
 COPY *.sln .
+COPY nuget.config .
 COPY WebApp/*.csproj ./WebApp/
 COPY WebApp/*.config ./WebApp/
 RUN nuget restore
