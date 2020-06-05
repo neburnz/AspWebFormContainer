@@ -27,9 +27,9 @@ With Docker: branches ***container***, ***nuget_local***.
 2. Change directory to solution folder.
 3. Build the image:
 ```
-docker build --tag {tag_name} .
+docker build --tag {image_tag} .
 ```
 4. Run the container:
 ```
-docker run --name {container_name} -e "DefaultConnection={connection_string}" --rm -it -p {port}:80 {tag_name}
+docker run --name {container_name} -e "DefaultConnection={connection_string}" --rm -it -p {port}:80 {image_tag}
 ```
