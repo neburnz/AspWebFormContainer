@@ -124,10 +124,16 @@ namespace siavi.UI.Clases.WebApiClient
 
             request.Headers["Authorization"] = "Bearer " + SecurityContext.GetJwt();
 
-            // Configurar Policy para manejar excepciones lanzadas por WebRequest
+            // Configurar Policy para manejar excepciones lanzadas por WebRequest y WebResponse
             var retryPolicy = Policy.Handle<NotSupportedException>().Or<NotImplementedException>()
             // Realiza un número especificado de intentos calculando la duración en segundos entre cada uno de ellos
-                .WaitAndRetry(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+                .WaitAndRetry(3, 
+                    retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                    (exception, timeSpan, context) => {
+                        // Add logic to be executed before each retry, such as logging
+                        Logger.Error(exception);
+                    }
+                );
 
             // Ejecuta Policy agrupando las llamadas de WebRequest
             retryPolicy.Execute(() =>

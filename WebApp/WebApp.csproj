@@ -244,6 +244,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClient.cs" />
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
