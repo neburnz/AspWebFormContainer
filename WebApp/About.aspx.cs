@@ -11,7 +11,8 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var fechaUtcHoy = Session["FechaUtcDeHoy"].ToString();
+            lblFechaUtcHoy.Text = fechaUtcHoy;
         }
     }
 }

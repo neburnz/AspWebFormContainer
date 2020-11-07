@@ -401,6 +401,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigurationBuildersExtensions\ConfigurationBuildersExtensions.csproj">
+      <Project>{8a319937-d2f4-480d-b2be-ab02822e16b2}</Project>
+      <Name>ConfigurationBuildersExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
